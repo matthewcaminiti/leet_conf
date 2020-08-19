@@ -1,0 +1,12 @@
+{
+  "editor.minimap.enabled": false,
+  "workbench.tree.indent": 21,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#6ae1ff"
+  },
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "**/components/*.js": "javascriptreact"
+  }
+}
