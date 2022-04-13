@@ -57,10 +57,9 @@ return packer.startup(function(use)
     -- Colorschemes
     -- use "lunarvim/colorschemes" -- a bunch of colorschemes (most notable 'darkplus')
 	use "lunarvim/darkplus.nvim"
-    -- use "morhetz/gruvbox" -- gruvbox colorscheme
-	use "rafamadriz/gruvbox"
     use "sainnhe/sonokai" -- sonokai colorscheme
-    use 'folke/tokyonight.nvim' -- tokyonight colorscheme
+    use "folke/tokyonight.nvim" -- tokyonight colorscheme
+	use "gruvbox-community/gruvbox" -- GRUVBOX COMMUNITY AYYO
 
     -- Completion plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin

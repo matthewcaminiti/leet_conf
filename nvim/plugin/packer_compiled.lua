@@ -127,7 +127,7 @@ _G.packer_plugins = {
   gruvbox = {
     loaded = true,
     path = "/home/casio/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/rafamadriz/gruvbox"
+    url = "https://github.com/gruvbox-community/gruvbox"
   },
   ["markdown-preview.nvim"] = {
     commands = { "MarkdownPreview" },

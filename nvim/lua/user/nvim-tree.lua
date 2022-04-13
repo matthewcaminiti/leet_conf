@@ -42,7 +42,6 @@ nvim_tree.setup {
         "dashboard",
         "alpha",
     },
---    auto_close = true,
     open_on_tab = false,
     hijack_cursor = false,
     update_cwd = true,
@@ -79,8 +78,12 @@ nvim_tree.setup {
             custom_only = false,
             list = {
                 { key = "<CR>", cb = tree_cb "edit" },
-                { key = "h", cb = tree_cb "close_node" },
+                -- { key = "h", cb = tree_cb "close_node" },
                 { key = "v", cb = tree_cb "vsplit" },
+				{ key = "a", action = "create" }, -- to create dir, just suffix with a '/'
+				{ key = "r", action = "rename" },
+				{ key = "R", action = "refresh"},
+				{ key = "W", action = "collapse_all"},
             },
         },
         number = false,
