@@ -40,6 +40,7 @@ local kind_icons = {
 }
 
 cmp.setup {
+	preselect = cmp.PreselectMode.None,
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body) -- specific to Luasnip
@@ -50,7 +51,7 @@ cmp.setup {
         ["<C-j>"] = cmp.mapping.select_next_item(), -- navigate down through completions
         ["<C-e>"] = cmp.mapping { -- to close completions window
             i = cmp.mapping.abort(),
-            c = cmp.mapping.close(), 
+            c = cmp.mapping.close(),
         },
         ["<CR>"] = cmp.mapping.confirm { select = false }, -- ENTER to select completion ONLY if something is explicitly selected (set to true otherwise)
         ["<Tab>"] = cmp.mapping.select_next_item(), -- navigate down through completions

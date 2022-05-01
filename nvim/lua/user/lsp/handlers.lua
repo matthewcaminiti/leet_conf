@@ -15,7 +15,7 @@ M.setup = function()
 
     local config = {
         -- virtual text (the stuff to the right of pane)
-        virtual_text = false,
+        virtual_text = true,
         -- show signs
         signs = {
             active = signs,
