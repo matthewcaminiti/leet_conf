@@ -24,3 +24,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # DING
 alias b="echo -en '\a'"
+
+# colourful cat
+alias cat='bat -pp'
