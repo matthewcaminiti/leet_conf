@@ -64,8 +64,8 @@ cmp.setup {
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
             vim_item.menu = ({
                 nvim_lsp = "[LSP]",
-                luasnip = "[Snippet]",
                 buffer = "[Buffer]",
+                luasnip = "[Snippet]",
                 path = "[Path]",
             })[entry.source.name]
             return vim_item
@@ -73,8 +73,8 @@ cmp.setup {
     },
     sources = { -- the order in which completions will show up, given their source
         { name = "nvim_lsp" },
-        { name = "luasnip" },
         { name = "buffer" },
+        { name = "luasnip" },
         { name = "path" },
     },
     confirm_opts = {
@@ -82,9 +82,11 @@ cmp.setup {
         select = false,
     },
     window = {
-		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		},
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+		--[[ documentation = { ]]
+		--[[ 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, ]]
+		--[[ }, ]]
 	},
     experimental = {
         ghost_text = false,
