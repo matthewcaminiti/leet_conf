@@ -8,7 +8,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
         "clone",
         "--depth",
         "1",
-        "https://github.com/wbthomason/packer.vim",
+        "https://github.com/wbthomason/packer.nvim",
         install_path,
     }
     print "Installing packer...close and reopen Neovim..."
@@ -76,6 +76,7 @@ return packer.startup(function(use)
     -- LSP
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+	use "simrat39/rust-tools.nvim"
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
@@ -83,6 +84,7 @@ return packer.startup(function(use)
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
+		commit = "9bfaf62e42bdcd042df1230e9188487e62a112c0",
         run = ":TSUpdate", -- auto update
     }
     use "JoosepAlviste/nvim-ts-context-commentstring" -- know what comment string to use based on file
