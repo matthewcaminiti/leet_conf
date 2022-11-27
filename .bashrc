@@ -21,11 +21,45 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Alias definitions.
+##################### ALIASES
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+##################### FUNCTIONS
+function dlf() {
+	containerId=$(dcl | grep $1 | awk '{print $1}')
 
+	if [[ -z "$containerId" ]]; then
+		echo "Couldn't find container matching: \"$1\""
+	else
+		docker logs -f "$containerId"
+	fi
+}
+
+function gr() {
+	len=7
+
+	branches=`git reflog | egrep -io "moving from ([^[:space:]]+)" | awk '{ print $3 }' | awk ' !x[$0]++' | egrep -v '^[a-f0-9]{40}$' | head -n$len`
+	branchArr=($branches)
+
+	if [[ -z "$1" ]]; then
+		for (( i=0; i<$len; i++ )); do
+			echo "[$i]: ${branchArr[$i]}"
+		done
+	else
+		echo "-- checking out: (${branchArr[$1]})"
+		git checkout ${branchArr[$1]}
+	fi
+}
+function glo() {
+	[ -z "$1" ] && n=5 || n=$1
+
+	if [[ $1 == '+' ]]; then
+		git log --oneline
+	else 
+		git log --oneline -n $n
+	fi
+}
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
