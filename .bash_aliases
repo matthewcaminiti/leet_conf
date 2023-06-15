@@ -1,6 +1,5 @@
 # git
 alias gs='git status'
-alias glo="git log --oneline -n 5"
 
 # sublime
 alias sublime='subl'
@@ -13,8 +12,8 @@ alias ls='exa --icons'
 alias tree='exa --icons --tree --ignore-glob="node_modules"'
 
 # nvim
-alias vim="~/.local/bin/nvim.appimage"
-alias nvim="~/.local/bin/nvim.appimage"
+# alias vim="~/.local/bin/nvim.appimage"
+# alias nvim="~/.local/bin/nvim.appimage"
 
 # tmux
 alias tmux="tmux -2"

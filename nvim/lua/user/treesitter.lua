@@ -147,7 +147,7 @@ configs.setup {
         -- disable = { "" }, -- list of languages that will be disabled
         additional_vim_regex_highlighting = true,
     },
-    indent = { enable = true, disable = { "yaml", "lua", "go", "html", "javascriptreact" } },
+    indent = { enable = true, disable = { "yaml", "lua", "go", "javascriptreact" } },
     context_commentstring = {
         enable = true,
         enable_autocmd = false,

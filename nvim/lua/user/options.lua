@@ -1,6 +1,6 @@
 -- :help options
 vim.opt.mouse = "a"		    -- enable mouse support
-vim.opt.expandtab = false	-- convert tabs to spaces
+vim.opt.expandtab = true	-- convert tabs to spaces
 vim.opt.shiftwidth = 4		-- the number of spaces inserted for each indentation
 vim.opt.tabstop = 4		    -- insert 4 spaces for a tab
 vim.opt.showtabline = 2		-- show tabs for files at the top of the screen
@@ -26,7 +26,7 @@ vim.opt.updatetime = 100	-- faster completion (4000ms default)
 vim.opt.incsearch = true	-- show search matches as the search query is being typed
 vim.opt.scrolloff = 12		-- pad cursor from window top and bottom
 vim.opt.sidescrolloff = 8	-- pad cursor from window left and right
---vim.opt.colorcolumn = 80	-- formatting column in editor
+vim.opt.colorcolumn = "100"	-- formatting column in editor
 vim.opt.cmdheight = 2		-- height of command pane
 vim.opt.signcolumn = "yes"	-- margin to the left, good for linting
 vim.opt.termguicolors = true	-- enables ="true" color support
