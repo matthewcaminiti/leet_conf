@@ -124,7 +124,7 @@ export raspberry=192.168.0.28
 
 xset r rate 300 35
 
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/home/casio/go/bin
 # . "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.nvm"
