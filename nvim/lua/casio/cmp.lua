@@ -47,8 +47,6 @@ cmp.setup {
         end,
     },
     mapping = {
-        ["<C-k>"] = cmp.mapping.select_prev_item(), -- navigate up through completions
-        ["<C-j>"] = cmp.mapping.select_next_item(), -- navigate down through completions
         ["<C-e>"] = cmp.mapping { -- to close completions window
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
@@ -84,9 +82,6 @@ cmp.setup {
     window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
-		--[[ documentation = { ]]
-		--[[ 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, ]]
-		--[[ }, ]]
 	},
     experimental = {
         ghost_text = false,

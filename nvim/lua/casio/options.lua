@@ -1,8 +1,8 @@
 -- :help options
-vim.opt.mouse = "a"		    -- enable mouse support
+vim.opt.mouse = "a"		-- enable mouse support
 vim.opt.expandtab = true	-- convert tabs to spaces
 vim.opt.shiftwidth = 4		-- the number of spaces inserted for each indentation
-vim.opt.tabstop = 4		    -- insert 4 spaces for a tab
+vim.opt.tabstop = 4		 -- insert 4 spaces for a tab
 vim.opt.showtabline = 2		-- show tabs for files at the top of the screen
 vim.opt.syntax = "on"		-- syntax babyyy
 vim.opt.cursorline = true	-- highlight current line
@@ -11,7 +11,7 @@ vim.opt.showmatch = true	-- show matching pairs of brackets
 vim.opt.ignorecase = true	-- enable smartcase search sensitivity
 vim.opt.smartcase = true	-- enable smartcase search sensitivity
 vim.opt.relativenumber = true	-- show line numbers relative to cursor location
-vim.opt.nu = true		    -- show line numbers
+vim.opt.nu = true		-- show line numbers
 vim.opt.hlsearch = false	-- always unhighlight after search
 vim.opt.hidden = true		-- keeps buffers hidden in the background
 vim.opt.errorbells = false	-- no bellz
@@ -30,6 +30,7 @@ vim.opt.colorcolumn = "100"	-- formatting column in editor
 vim.opt.cmdheight = 2		-- height of command pane
 vim.opt.signcolumn = "yes"	-- margin to the left, good for linting
 vim.opt.termguicolors = true	-- enables ="true" color support
+vim.opt.background = "dark" -- dark theme
 vim.cmd [[autocmd BufWinEnter,BufNewFile,BufRead * setlocal formatoptions-=cro]] -- prevent comment blocks continuing on new line (:help fo-table)
 
 --vim.cmd [[set nohlsearch=true]] -- always unhighlighht after search

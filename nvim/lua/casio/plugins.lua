@@ -38,35 +38,25 @@ packer.init {
 	},
 }
 
--- Install plugins
 return packer.startup(function(use)
-    -- Plugin list
+    -- Core plugins
     use "wbthomason/packer.nvim" -- Have packer manage itself
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-    use "windwp/nvim-autopairs" -- Autopairs, {}, [], (), "", ''
-    use "numToStr/Comment.nvim" -- Easily comment stuff
-    use "kyazdani42/nvim-web-devicons" -- stuff for icons and things
-    use "kyazdani42/nvim-tree.lua" -- sexy file explorer
-	use "akinsho/bufferline.nvim" -- buffer tabs at the top
-	use "moll/vim-bbye" -- sum ting
 
-    -- Markdown preview with :MarkdownPreview command
-    --[[ use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview', ft = 'markdown'} ]]
-    use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }}
+    -- Autopairs
+    use "windwp/nvim-autopairs" -- Autopairs, {}, [], (), "", ''
+
+    -- Markdown preview with :MarkdownPreview
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
     -- Colorschemes
-    -- use "lunarvim/colorschemes" -- a bunch of colorschemes (most notable 'darkplus')
-	use "lunarvim/darkplus.nvim"
-    use "sainnhe/sonokai" -- sonokai colorscheme
-    use "folke/tokyonight.nvim" -- tokyonight colorscheme
-	use "gruvbox-community/gruvbox" -- GRUVBOX COMMUNITY AYYO
+    -- use "gruvbox-community/gruvbox" -- GRUVBOX COMMUNITY AYYO
+    use "morhetz/gruvbox" -- `gruvbox`
 
     -- Completion plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
     use "hrsh7th/cmp-nvim-lsp" -- lsp completion
-    --[[ use "hrsh7th/cmp-nvim-lua" -- buffer completions ]]
-    --[[ use "hrsh7th/cmp-nvim-lsp-signature-help" -- buffer completions ]]
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -79,7 +69,6 @@ return packer.startup(function(use)
     -- LSP
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-	use "simrat39/rust-tools.nvim"
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
@@ -87,13 +76,22 @@ return packer.startup(function(use)
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
-		commit = "9bfaf62e42bdcd042df1230e9188487e62a112c0",
         run = ":TSUpdate", -- auto update
     }
+
+    -- Comments (requires treesitter)
+    use "numToStr/Comment.nvim" -- Easily comment stuff
     use "JoosepAlviste/nvim-ts-context-commentstring" -- know what comment string to use based on file
 
     -- Git
     use "lewis6991/gitsigns.nvim"
+
+    -- Nvim Tree
+    use "kyazdani42/nvim-web-devicons" -- stuff for icons and things
+    use "kyazdani42/nvim-tree.lua" -- sexy file explorer
+
+    -- Buffer tabs
+    use "akinsho/bufferline.nvim"
 
     -- Automatically set up your config after cloning packer.nvim
     -- Put this at the end after all plugins
@@ -101,3 +99,4 @@ return packer.startup(function(use)
         require("packer").sync()
     end
 end)
+
