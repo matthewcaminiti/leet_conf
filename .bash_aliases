@@ -1,14 +1,20 @@
+#!/bin/bash
+
 # git
 alias gs='git status'
 
 # sublime
-alias sublime='subl'
+alias sublime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
+# nvim
+alias nvim="$HOME/.local/bin/nvim-macos/bin/nvim"
 
 # json
-alias json="python -m json.tool"
+alias json="python3 -m json.tool"
 
 # exa
 alias ls='exa --icons'
+alias ll='exa --icons -l'
 alias tree='exa --icons --tree --ignore-glob="node_modules"'
 
 # tmux
@@ -20,5 +26,21 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # DING
 alias b="echo -en '\a'"
 
-# colourful cat
-alias cat='bat -pp'
+# Golang
+alias gtc="sed '/===/d' | sed ''/PASS/s//$(printf "$(tput setaf 2)PASS$(tput setaf 7)")/'' | sed ''/FAIL/s//$(printf "$(tput setaf 1)FAIL$(tput setaf 7)")/'' | sed ''/SKIP/s//$(printf "$(tput setaf 3)SKIP$(tput setaf 7)")/''"
+# alias gtc="sed '/===/d' | sed ''/PASS/s//$(printf "\033[32mPASS\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'' | sed ''/SKIP/s//$(printf "\033[31mSKIP\033[0m")/''"
+alias gf="gofmt -w -s -l ."
+
+# BAT BAT
+alias cat="bat -pp"
+
+# DAWKA
+# alias dcl='docker container ls --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
+alias dcd='docker-compose down'
+alias dcu='docker-compose up -d'
+
+# Commerce
+alias comm-u='cd ~/Documents/commerce/ && cd dev/commerce && dcu && cd ../payments && dcu; cd ~/Documents/commerce'
+alias comm-d='cd ~/Documents/commerce/ && cd dev/commerce && dcd; cd ../payments && dcd; cd ~/Documents/commerce'
+alias comm-r='cd ~/Documents/commerce/ && cd dev/commerce && dcd; dcu && cd ../payments && dcd; dcu && cd ~/Documents/commerce'
+
