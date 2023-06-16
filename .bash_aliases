@@ -11,10 +11,6 @@ alias json="python -m json.tool"
 alias ls='exa --icons'
 alias tree='exa --icons --tree --ignore-glob="node_modules"'
 
-# nvim
-alias vim="~/.local/bin/nvim.appimage"
-alias nvim="~/.local/bin/nvim.appimage"
-
 # tmux
 alias tmux="tmux -2"
 
