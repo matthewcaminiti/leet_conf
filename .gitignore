@@ -1,0 +1,3 @@
+# nvim
+## ignore packer auto-gen
+nvim/plugin/
