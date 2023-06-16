@@ -48,7 +48,7 @@ end
 -- Does highlighting on hover
 local function lsp_highlight_document(client)
     -- Set autocommands conditional on server_capabilities
-    if client.server_capabilities.document_highlight then
+    if client.server_capabilities.documentHighlightProvider then
         vim.api.nvim_exec(
         [[
         augroup lsp_document_highlight
