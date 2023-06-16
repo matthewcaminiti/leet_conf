@@ -51,8 +51,7 @@ return packer.startup(function(use)
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
     -- Colorschemes
-    -- use "gruvbox-community/gruvbox" -- GRUVBOX COMMUNITY AYYO
-    use "morhetz/gruvbox" -- `gruvbox`
+    use "ellisonleao/gruvbox.nvim" -- `gruvbox`
 
     -- Completion plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
