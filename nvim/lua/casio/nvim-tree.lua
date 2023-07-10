@@ -102,7 +102,7 @@ nvim_tree.setup {
     },
     git = {
         enable = true,
-        ignore = true,
+        ignore = false, -- do not hide files that are included in .gitignore
         timeout = 500,
     },
     view = {
