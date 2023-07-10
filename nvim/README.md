@@ -14,6 +14,3 @@ neovim version 0.9.0
 
 - neovim data (plugins and cache): `.local/share/nvim`
 
-#### TODO
-
-- re-setup rust
