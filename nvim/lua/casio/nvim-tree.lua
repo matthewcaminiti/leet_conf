@@ -77,6 +77,7 @@ local function my_on_attach(bufnr)
     vim.keymap.set('n', 'a', api.fs.create, opts('Create')) -- to create dir, just suffix with a '/'
     vim.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
     vim.keymap.set('n', 'R', api.tree.reload, opts('Refresh'))
+    vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
 end
 
 nvim_tree.setup {

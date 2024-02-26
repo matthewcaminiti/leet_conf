@@ -1,0 +1,17 @@
+rename-window base
+split-window -h -c ~/Documents/commerce
+
+new-window -n merp-editor -c ~/Documents/merchant-payments
+
+new-window -n merp-ctl -c ~/Documents/merchant-payments/dev/merchant-payments
+split-window -v -c ~/Documents/merchant-payments
+split-window -h -c ~/Documents/merchant-payments/server
+
+new-window -n comm-fe -c ~/Documents/commerce/src
+split-window -h -c ~/Documents/commerce/apollo
+split-window -h -c ~/Documents/commerce/vue3
+select-layout -E
+
+new-window -n inv-ctl -c ~/Documents/invoicing/dev/invoicing
+split-window -v -c ~/Documents/invoicing/server
+split-window -h -c ~/Documents/invoicing/client

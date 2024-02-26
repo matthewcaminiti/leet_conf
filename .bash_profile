@@ -86,6 +86,31 @@ function glo() {
 	fi
 }
 
+function hcm() {
+    # start detached session
+    tmux new-session -s hcm-sess -n base -d
+
+    tmux send-keys -t hcm-sess 'cd ~/Documents/dev-core' C-m
+
+    tmux split-window -h -c ~/Documents/commerce
+
+    tmux new-window -n merp-editor -c ~/Documents/merchant-payments
+
+    tmux new-window -n merp-ctl -c ~/Documents/merchant-payments/dev/merchant-payments
+    tmux split-window -v -c ~/Documents/merchant-payments
+    tmux split-window -h -c ~/Documents/merchant-payments/server
+
+    tmux new-window -n comm-fe -c ~/Documents/commerce/apollo
+    tmux split-window -h -c ~/Documents/commerce/vue3
+    tmux select-layout -E # resize panes to be equal
+
+    tmux new-window -n inv-ctl -c ~/Documents/invoicing/dev/invoicing
+    tmux split-window -v -c ~/Documents/invoicing/server
+    tmux split-window -h -c ~/Documents/invoicing/client
+
+    tmux attach-session -d -t hcm-sess
+}
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -165,3 +190,4 @@ PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
 
 source /Users/mcaminiti/.docker/init-bash.sh || true # Added by Docker Desktop
+export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"

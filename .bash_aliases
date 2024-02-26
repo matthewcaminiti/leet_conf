@@ -40,7 +40,5 @@ alias dcd='docker-compose down'
 alias dcu='docker-compose up -d'
 
 # Commerce
-alias comm-u='cd ~/Documents/commerce/ && cd dev/commerce && dcu && cd ../payments && dcu; cd ~/Documents/commerce'
-alias comm-d='cd ~/Documents/commerce/ && cd dev/commerce && dcd; cd ../payments && dcd; cd ~/Documents/commerce'
-alias comm-r='cd ~/Documents/commerce/ && cd dev/commerce && dcd; dcu && cd ../payments && dcd; dcu && cd ~/Documents/commerce'
-
+alias comm-u='cd ~/Documents/commerce/dev/commerce && dcu; cd ~/Documents/commerce/dev/payments && dcu; cd ~/Documents/commerce'
+alias comm-d='cd ~/Documents/commerce/dev/commerce && dcd -v; cd ~/Documents/commerce/dev/payments && dcd -v; cd ~/Documents/commerce'
