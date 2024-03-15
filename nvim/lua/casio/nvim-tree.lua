@@ -5,11 +5,6 @@ if not status_ok then
     return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-    return
-end
-
 local function my_on_attach(bufnr)
     local api = require('nvim-tree.api')
 
@@ -80,6 +75,8 @@ local function my_on_attach(bufnr)
     vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
 end
 
+local icons = require "casio.icons"
+
 nvim_tree.setup {
     on_attach = my_on_attach,
     disable_netrw = true,
@@ -108,7 +105,6 @@ nvim_tree.setup {
     },
     view = {
         width = 45,
-        hide_root_folder = false,
         side = "left",
         number = false,
         relativenumber = false
@@ -120,33 +116,40 @@ nvim_tree.setup {
 	},
 	renderer = {
 		highlight_git = true,
-		icons = {
-			show = {
-				git = true,
-				folder = true,
-				file = true,
-				folder_arrow = true,
-			},
-			glyphs = {
-				default = "",
-				symlink = "",
-				git = {
-					unstaged = "",
-					staged = "S",
-					unmerged = "",
-					renamed = "➜",
-					deleted = "",
-					untracked = "U",
-					ignored = "◌",
-				},
-				folder = {
-					default = "",
-					open = "",
-					empty = "",
-					empty_open = "",
-					symlink = "",
-				},
-			}
-		}
+        icons = {
+            git_placement = "before",
+            padding = " ",
+            symlink_arrow = " ➛ ",
+            show = {
+                git = true,
+                folder = true,
+                file = true,
+                folder_arrow = true,
+            },
+            glyphs = {
+                default = icons.ui.Text,
+                symlink = icons.ui.FileSymlink,
+                bookmark = icons.ui.BookMark,
+                folder = {
+                    arrow_closed = icons.ui.ChevronRight,
+                    arrow_open = icons.ui.ChevronShortDown,
+                    default = icons.ui.Folder,
+                    open = icons.ui.FolderOpen,
+                    empty = icons.ui.EmptyFolder,
+                    empty_open = icons.ui.EmptyFolderOpen,
+                    symlink = icons.ui.FolderSymlink,
+                    symlink_open = icons.ui.FolderOpen,
+                },
+                git = {
+                    unstaged = icons.git.FileUnstaged,
+                    staged = icons.git.FileStaged,
+                    unmerged = icons.git.FileUnmerged,
+                    renamed = icons.git.FileRenamed,
+                    untracked = icons.git.FileUntracked,
+                    deleted = icons.git.FileDeleted,
+                    ignored = icons.git.FileIgnored,
+                },
+            },
+        },
 	},
 }

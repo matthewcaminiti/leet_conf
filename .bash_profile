@@ -86,31 +86,6 @@ function glo() {
 	fi
 }
 
-function hcm() {
-    # start detached session
-    tmux new-session -s hcm-sess -n base -d
-
-    tmux send-keys -t hcm-sess 'cd ~/Documents/dev-core' C-m
-
-    tmux split-window -h -c ~/Documents/commerce
-
-    tmux new-window -n merp-editor -c ~/Documents/merchant-payments
-
-    tmux new-window -n merp-ctl -c ~/Documents/merchant-payments/dev/merchant-payments
-    tmux split-window -v -c ~/Documents/merchant-payments
-    tmux split-window -h -c ~/Documents/merchant-payments/server
-
-    tmux new-window -n comm-fe -c ~/Documents/commerce/apollo
-    tmux split-window -h -c ~/Documents/commerce/vue3
-    tmux select-layout -E # resize panes to be equal
-
-    tmux new-window -n inv-ctl -c ~/Documents/invoicing/dev/invoicing
-    tmux split-window -v -c ~/Documents/invoicing/server
-    tmux split-window -h -c ~/Documents/invoicing/client
-
-    tmux attach-session -d -t hcm-sess
-}
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -175,19 +150,9 @@ function parse_git_dirty {
 
 export PS1="\[\e[33m\][\[\e[m\]\[\e[32m\]\u\[\e[m\]\[\e[33m\]:\[\e[m\]\[\e[36m\]\W\[\e[m\]\[\e[33m\]]\[\e[m\]\[\e[35m\]\`parse_git_branch\`\[\e[m\]\[\e[31m\]\\$\[\e[m\] "
 
-export devdb="172.18.40.181"
-
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH="$PATH:$HOME/.composer/vendor/bin"
 
-# Setting PATH for Python 2.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
-
-source /Users/mcaminiti/.docker/init-bash.sh || true # Added by Docker Desktop
-export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

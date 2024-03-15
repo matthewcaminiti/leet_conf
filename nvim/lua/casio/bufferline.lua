@@ -3,6 +3,8 @@ if not status_ok then
   return
 end
 
+local icons = require "casio.icons"
+
 bufferline.setup {
 	options = {
 		numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
@@ -14,13 +16,12 @@ bufferline.setup {
 		-- and so changing this is NOT recommended, this is intended
 		-- as an escape hatch for people who cannot bear it for whatever reason
 		indicator = {
-			icon = "▎",
+			icon = icons.ui.BoldLineLeft,
 			style = "icon"
 		},
-		buffer_close_icon = "",
+		buffer_close_icon = icons.ui.Close,
 		modified_icon = "●",
-		close_icon = "",
-		-- close_icon = '',
+		close_icon = icons.ui.Close,
 		left_trunc_marker = "",
 		right_trunc_marker = "",
 		max_name_length = 30,

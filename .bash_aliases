@@ -15,6 +15,7 @@ alias json="python3 -m json.tool"
 # exa
 alias ls='exa --icons'
 alias ll='exa --icons -l'
+alias la='exa --icons -la'
 alias tree='exa --icons --tree --ignore-glob="node_modules"'
 
 # tmux

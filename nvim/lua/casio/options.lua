@@ -1,8 +1,8 @@
 -- :help options
 vim.opt.mouse = "a"		-- enable mouse support
 vim.opt.expandtab = true	-- convert tabs to spaces
-vim.opt.shiftwidth = 4		-- the number of spaces inserted for each indentation
-vim.opt.tabstop = 4		 -- insert 4 spaces for a tab
+vim.opt.shiftwidth = 2		-- the number of spaces inserted for each indentation
+vim.opt.tabstop = 2		 -- insert 4 spaces for a tab
 vim.opt.showtabline = 2		-- show tabs for files at the top of the screen
 vim.opt.syntax = "on"		-- syntax babyyy
 vim.opt.cursorline = true	-- highlight current line
