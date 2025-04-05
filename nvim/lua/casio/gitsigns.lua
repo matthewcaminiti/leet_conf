@@ -20,11 +20,12 @@ end
 gitsigns.setup {
     on_attach = on_attach,
     signs = {
-        add = { hl = "GitSignsAdd", text = icons.ui.BoldLineMiddle, numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-        change = { hl = "GitSignsChange", text = icons.ui.BoldLineDashedMiddle, numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-        delete = { hl = "GitSignsDelete", text = icons.ui.TriangleShortArrowRight, numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-        topdelete = { hl = "GitSignsDelete", text = icons.ui.TriangleShortArrowRight, numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-        changedelete = { hl = "GitSignsChange", text = icons.ui.BoldLineMiddle, numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+        add          = { text = icons.ui.BoldLineMiddle },
+        change       = { text = icons.ui.BoldLineDashedMiddle },
+        delete       = { text = icons.ui.TriangleShortArrowRight },
+        topdelete    = { text = icons.ui.TriangleShortArrowRight },
+        changedelete = { text = icons.ui.BoldLineMiddle },
+        untracked    = { text = icons.ui.BoldLineMiddle },
     },
     signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
     numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
@@ -43,7 +44,7 @@ gitsigns.setup {
         ignore_whitespace = false,
     },
     current_line_blame_formatter = "<author>, [<author_time:%a, %b %d %Y %H:%M>] - \"<summary>\"",
-    current_line_blame_formatter_opts = {
+    current_line_blame_opts = {
         relative_time = false,
     },
     sign_priority = 6,
@@ -57,8 +58,5 @@ gitsigns.setup {
         relative = "cursor",
         row = 0,
         col = 1,
-    },
-    yadm = {
-        enable = false,
     },
 }

@@ -7,7 +7,8 @@ alias gs='git status'
 alias sublime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # nvim
-alias nvim="$HOME/.local/bin/nvim-macos/bin/nvim"
+# alias nvim="$HOME/.local/bin/nvim-macos/bin/nvim"
+alias nvim="$HOME/.local/bin/nvim-macos-arm64/bin/nvim"
 
 # json
 alias json="python3 -m json.tool"
@@ -43,3 +44,6 @@ alias dcu='docker-compose up -d'
 # Commerce
 alias comm-u='cd ~/Documents/commerce/dev/commerce && dcu; cd ~/Documents/commerce/dev/payments && dcu; cd ~/Documents/commerce'
 alias comm-d='cd ~/Documents/commerce/dev/commerce && dcd -v; cd ~/Documents/commerce/dev/payments && dcd -v; cd ~/Documents/commerce'
+
+# Samsung Tizen
+alias tz-pkg='~/Applications/tizen-studio/package-manager/package-manager-cli.bin'

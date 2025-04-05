@@ -114,6 +114,13 @@ nvim_tree.setup {
 			quit_on_open = false,
 		}
 	},
+  filesystem_watchers = {
+    enable = false,
+  },
+  filters = {
+    git_ignored = false,
+    dotfiles = false,
+  },
 	renderer = {
 		highlight_git = true,
         icons = {

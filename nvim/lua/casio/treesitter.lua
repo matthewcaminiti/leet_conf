@@ -45,6 +45,7 @@ local languages = {
 	"sql",
 	"todotxt",
 	"toml",
+	"typescript",
 	"tsx",
 	"vim",
 	"vue",

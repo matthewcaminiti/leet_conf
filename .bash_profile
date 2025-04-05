@@ -86,6 +86,12 @@ function glo() {
 	fi
 }
 
+function hexstr() {
+  [ -z "$1" ] && n=16 || n=$1
+
+  node -e "console.log(require('crypto').randomBytes($n).toString('hex'))"
+}
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -156,4 +162,21 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
+export raspberry="192.168.0.28"
+
+# ruby/gem
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+
+# Android dev
+export ANDROID_HOME=/Users/mcaminiti/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools/
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin/
+export PATH=$PATH:$ANDROID_HOME/build-tools/
+export PATH=$PATH:$ANDROID_HOME/emulator/
+
+# Tizen dev
+export PATH="$PATH:/Users/mcaminiti/Applications/tizen-studio/tools/tizen-core:/Users/mcaminiti/Applications/tizen-studio/tools/ide/bin:/Users/mcaminiti/Applications/tizen-studio/tools"

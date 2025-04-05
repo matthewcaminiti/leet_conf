@@ -62,7 +62,7 @@ return packer.startup(function(use)
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
 
     -- Snippets
-    use "L3MON4D3/LuaSnip" -- Snippet engine
+    use "L3MON4D3/LuaSnip" -- Snippet engine (maybe bad)
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     -- LSP
@@ -75,6 +75,7 @@ return packer.startup(function(use)
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
+        -- commit = "cc360a9beb1b30d172438f640e2c3450358c4086",
         run = ":TSUpdate", -- auto update
     }
 
