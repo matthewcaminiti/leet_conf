@@ -1,0 +1,72 @@
+local languages = {
+	"bash",
+	"c",
+	"cmake",
+	"comment",
+	"commonlisp",
+	"cpp",
+	"css",
+	"diff",
+	"dockerfile",
+	"dot",
+	"fish",
+	"git_rebase",
+	"gitattributes",
+	"gitignore",
+	"go",
+	"gomod",
+	"gowork",
+	"graphql",
+	"hjson",
+	"hlsl",
+	"html",
+	"http",
+	"java",
+	"javascript",
+	"jsdoc",
+	"json",
+	"json5",
+	"jsonnet",
+	"lua",
+	"make",
+	"markdown",
+	"markdown_inline",
+	"proto",
+	"python",
+	"regex",
+	"ruby",
+	"rust",
+	"scss",
+	"sql",
+	"todotxt",
+	"toml",
+	"typescript",
+	"tsx",
+	"vim",
+	"vue",
+	"yaml",
+}
+
+return {
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	config = function()
+		local configs = require("nvim-treesitter.configs")
+
+		configs.setup({
+			ensure_installed = languages,
+			sync_install = false,
+			highlight = { enable = true },
+			indent = { enable = true },
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<Enter>", -- set to `false` to disable one of the mappings
+					node_incremental = "<Enter>",
+					scope_incremental = false,
+					node_decremental = "<Backspace>",
+				},
+			},
+		})
+	end,
+}

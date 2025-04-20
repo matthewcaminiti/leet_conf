@@ -1,14 +1,6 @@
-local opts = { noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
-local term_ops = { silent = true }
-
--- Shorten function name
 local keymap = vim.api.nvim_set_keymap
-
--- Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 -- Modes
 --      normal_mode = "n",
@@ -51,3 +43,6 @@ keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 -- Stay in indent mode when shifting lines
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Format
+-- keymap("n", "<leader>cf", function() require("conform").format() end, opts)
