@@ -13,7 +13,7 @@ local function my_on_attach(bufnr)
 	vim.keymap.set("n", "d", api.fs.remove, opts("Delete"))
 end
 
-local icons = require("casio.icons")
+local icons = require("config.icons")
 
 return {
 	"nvim-tree/nvim-tree.lua",
