@@ -90,7 +90,7 @@ return {
 				},
 			},
 			menu = {
-				max_height = 30,
+				max_height = 20,
 				border = "rounded",
 				draw = {
 					padding = 1,
@@ -124,12 +124,12 @@ return {
 		-- See the fuzzy documentation for more information
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 		-- experimental show signature when typing trigger chars (like '(')
-		signature = {
-			enabled = true,
-			window = {
-				border = "rounded",
-			},
-		},
+		-- signature = {
+		-- 	enabled = true,
+		-- 	window = {
+		-- 		border = "rounded",
+		-- 	},
+		-- },
 	},
 	opts_extend = { "sources.default" },
 }

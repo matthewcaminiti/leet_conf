@@ -163,9 +163,21 @@ return {
 		-- Diagnostic Config
 		-- See :help vim.diagnostic.Opts
 		vim.diagnostic.config({
+			-- show diagnostic text to the right on line
+			virtual_text = true,
+			-- underline errant keyword
+			underline = true,
+			-- true == higher severities shown first
 			severity_sort = true,
-			float = { border = "rounded", source = "if_many" },
-			underline = { severity = vim.diagnostic.severity.ERROR },
+			-- diagnostics will update while in insert mode
+			update_in_insert = true,
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = "always",
+				header = "",
+			},
 			signs = {
 				text = {
 					[vim.diagnostic.severity.ERROR] = "󰅚 ",
@@ -173,19 +185,6 @@ return {
 					[vim.diagnostic.severity.INFO] = "󰋽 ",
 					[vim.diagnostic.severity.HINT] = "󰌶 ",
 				},
-			},
-			virtual_text = {
-				source = "if_many",
-				spacing = 2,
-				format = function(diagnostic)
-					local diagnostic_message = {
-						[vim.diagnostic.severity.ERROR] = diagnostic.message,
-						[vim.diagnostic.severity.WARN] = diagnostic.message,
-						[vim.diagnostic.severity.INFO] = diagnostic.message,
-						[vim.diagnostic.severity.HINT] = diagnostic.message,
-					}
-					return diagnostic_message[diagnostic.severity]
-				end,
 			},
 		})
 
@@ -240,7 +239,8 @@ return {
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
-			"prettier",
+			"prettier", -- format js/ts/jsx/tsx/html/css
+			"beautysh", -- format bash
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

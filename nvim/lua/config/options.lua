@@ -47,7 +47,7 @@ vim.opt.scrolloff = 12 -- pad cursor from window top and bottom
 vim.opt.sidescrolloff = 8 -- pad cursor from window left and right
 vim.opt.colorcolumn = "100" -- formatting column in editor
 
-vim.opt.cmdheight = 0 -- height of command pane
+vim.opt.cmdheight = 1 -- height of command pane
 
 vim.opt.signcolumn = "yes" -- margin to the left, good for linting
 
