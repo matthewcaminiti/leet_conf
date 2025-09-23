@@ -47,3 +47,11 @@ alias comm-d='cd ~/Documents/commerce/dev/commerce && dcd -v; cd ~/Documents/com
 
 # Samsung Tizen
 alias tz-pkg='~/Applications/tizen-studio/package-manager/package-manager-cli.bin'
+
+################
+# Ambient
+
+# list AVFoundation devices
+alias devices='ffmpeg -f avfoundation -list_devices true -i ""'
+
+alias amb1='ssh -i ~/.ssh/ambient_ed25519 matthew@100.81.37.121'

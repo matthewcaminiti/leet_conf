@@ -1,3 +1,5 @@
 # nvim
 ## ignore packer auto-gen
 nvim/plugin/
+
+.DS_Store

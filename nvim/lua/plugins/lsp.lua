@@ -207,7 +207,9 @@ return {
 		local servers = {
 			bashls = {},
 			marksman = {},
-			clangd = {},
+			clangd = {
+				filetypes = { "c", "cpp", "obj", "objcpp" },
+			},
 			pyright = {},
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -221,6 +223,7 @@ return {
 			lua_ls = {},
 			tailwindcss = {},
 			cssmodules_ls = {},
+			protols = {},
 		}
 
 		-- Ensure the servers and tools above are installed
