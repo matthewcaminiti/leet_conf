@@ -1,0 +1,76 @@
+[global]
+# Which monitor (name or index) to show notifications on (if “follow” is off)
+monitor = 0
+
+# Placement mode for multi-monitor: none / mouse / keyboard
+# “none” means always on `monitor` above; “mouse” = where mouse is, “keyboard” = where focused window is
+# Default: none
+follow = mouse
+
+# Geometry: width × height + x-offset + y-offset
+width = 300
+height = 80
+origin = top-right
+offset = 20 x 20
+
+# Transparency: 0 = fully opaque, 100 = invisible
+transparency = 20
+
+# If you want rounded corners:
+corner_radius = 10
+corners = all
+
+# Frame (border) settings
+frame_width = 2
+frame_color = "#88c0d0"
+
+# Separator between notifications
+separator_color = "#4c566a"
+separator_height = 2
+
+# Padding (vertical / horizontal)
+padding = 8
+horizontal_padding = 10
+
+# Default font (Pango style)
+font = Monospace 11
+
+# Icon placement: left / right / top / off
+icon_position = left
+
+# Behavior with duplicates
+stack_duplicates = true
+hide_duplicate_count = false
+
+# Markup (HTML-like) parsing: full / strip / no
+markup = full
+
+# Whether to use POSIX regex in rules
+enable_posix_regex = true
+
+# If client tries to close early using DBus, should dunst “ignore” that? (so your timeout wins)
+ignore_dbusclose = false
+
+# If user is idle, notifications may pause; this setting controls that
+# idle_threshold = "30s"   # comment or uncomment as you like
+
+#######################################
+# Urgency sections
+#######################################
+
+[urgency_low]
+background = "#2E3440"
+foreground = "#D8DEE9"
+timeout = 5
+
+[urgency_normal]
+background = "#3B4252"
+foreground = "#ECEFF4"
+timeout = 8
+frame_color = "#81A1C1"
+
+[urgency_critical]
+background = "#BF616A"
+foreground = "#ECEFF4"
+timeout = 0            # 0 means “never auto-dismiss”
+frame_color = "#D08770"

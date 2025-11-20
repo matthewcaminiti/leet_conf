@@ -6,9 +6,8 @@ alias gs='git status'
 # sublime
 alias sublime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
-# nvim
-# alias nvim="$HOME/.local/bin/nvim-macos/bin/nvim"
-alias nvim="$HOME/.local/bin/nvim-macos-arm64/bin/nvim"
+# neovim
+alias nvim='/opt/nvim-linux-x86_64/bin/nvim'
 
 # json
 alias json="python3 -m json.tool"
@@ -29,24 +28,15 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias b="echo -en '\a'"
 
 # Golang
-alias gtc="sed '/===/d' | sed ''/PASS/s//$(printf "$(tput setaf 2)PASS$(tput setaf 7)")/'' | sed ''/FAIL/s//$(printf "$(tput setaf 1)FAIL$(tput setaf 7)")/'' | sed ''/SKIP/s//$(printf "$(tput setaf 3)SKIP$(tput setaf 7)")/''"
-# alias gtc="sed '/===/d' | sed ''/PASS/s//$(printf "\033[32mPASS\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'' | sed ''/SKIP/s//$(printf "\033[31mSKIP\033[0m")/''"
 alias gf="gofmt -w -s -l ."
 
 # BAT BAT
-alias cat="bat -pp"
+alias cat="batcat -pp"
 
 # DAWKA
 # alias dcl='docker container ls --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias dcd='docker-compose down'
 alias dcu='docker-compose up -d'
-
-# Commerce
-alias comm-u='cd ~/Documents/commerce/dev/commerce && dcu; cd ~/Documents/commerce/dev/payments && dcu; cd ~/Documents/commerce'
-alias comm-d='cd ~/Documents/commerce/dev/commerce && dcd -v; cd ~/Documents/commerce/dev/payments && dcd -v; cd ~/Documents/commerce'
-
-# Samsung Tizen
-alias tz-pkg='~/Applications/tizen-studio/package-manager/package-manager-cli.bin'
 
 ################
 # Ambient
@@ -55,3 +45,5 @@ alias tz-pkg='~/Applications/tizen-studio/package-manager/package-manager-cli.bi
 alias devices='ffmpeg -f avfoundation -list_devices true -i ""'
 
 alias amb1='ssh -i ~/.ssh/ambient_ed25519 matthew@100.81.37.121'
+
+alias repipe='systemctl --user restart pipewire pipewire-pulse wireplumber'

@@ -97,8 +97,8 @@ function hexstr() {
 }
 
 function amb() {
-    local osrs_dir="${1:-$HOME/Documents/ambient/osrs}"
-    local cloudrs_dir="${2:-$HOME/Documents/ambient/cloudrs}"
+    local osrs_dir="${1:-$HOME/Documents/osrs}"
+    local cloudrs_dir="${2:-$HOME/Documents/cloudrs}"
 
     # kill old session if it exists
     tmux kill-session -t ambient 2>/dev/null
@@ -106,19 +106,13 @@ function amb() {
     # Start a new detached session
     tmux new-session -d -s ambient
 
-    # --- Window 1 (complex layout) ---
+    # --- Window 1 (two horizontal planes) ---
     tmux send-keys -t ambient:1 "clear && cd $osrs_dir" C-m
-
-    # Split window into 8 panes
-    tmux split-window -h -t ambient:1 -c "$osrs_dir"
-    tmux split-window -h -t ambient:1 -c "$osrs_dir"
-    tmux split-window -h -t ambient:1 -c "$osrs_dir"
-    tmux split-window -h -t ambient:1 -c "$osrs_dir"
-    tmux split-window -v -t ambient:1 -c "$osrs_dir"
-    tmux split-window -v -t ambient:1 -c "$osrs_dir"
+    # tmux split-window -h -t ambient:1 -c "$osrs_dir"
+    # tmux split-window -h -t ambient:1 -c "$osrs_dir"
     tmux split-window -v -t ambient:1 -c "$osrs_dir"
 
-    # Set to tiled
+    # Set tiled layout (even space)
     tmux select-layout tiled
 
     # --- Window 2 ---
@@ -199,31 +193,13 @@ function parse_git_dirty {
 
 export PS1="\[\e[33m\][\[\e[m\]\[\e[32m\]\u\[\e[m\]\[\e[33m\]:\[\e[m\]\[\e[36m\]\W\[\e[m\]\[\e[33m\]]\[\e[m\]\[\e[35m\]\`parse_git_branch\`\[\e[m\]\[\e[31m\]\\$\[\e[m\] "
 
-# Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-
-export raspberry="192.168.0.28"
-export macedonia="192.168.0.43"
-
 # ruby/gem
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
-
-# Android dev
-export ANDROID_HOME=/Users/mcaminiti/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/platform-tools/
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin/
-export PATH=$PATH:$ANDROID_HOME/build-tools/
-export PATH=$PATH:$ANDROID_HOME/emulator/
-
-# Tizen dev
-export PATH="$PATH:/Users/mcaminiti/Applications/tizen-studio/tools/tizen-core:/Users/mcaminiti/Applications/tizen-studio/tools/ide/bin:/Users/mcaminiti/Applications/tizen-studio/tools"
 
 # Setting PATH for Python 3.11
 # The original version is saved in .bash_profile.pysave
@@ -243,3 +219,12 @@ export amb5="100.92.35.4"
 
 export PATH="$PATH:/Users/mcaminiti/Documents/personal/tyte"
 export PATH="$PATH:/Users/mcaminiti/.local/bin"
+
+export PATH=/usr/local/cuda-12.8/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# Created by `pipx` on 2025-09-23 19:39:04
+export PATH="$PATH:/home/mcaminiti/.local/bin"
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
